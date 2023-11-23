@@ -1,40 +1,28 @@
 import Image from 'next/image';
-import EyeIcon from '../components/icons/EyeIcon';
-import HeartIcon from '../components/icons/HeartIcon';
-import CommentIcon from '../components/icons/CommentIcon';
 import styles from '../styles/ArticleCard.module.css';
 
-const ArticleCard = ({ article }) => {
+const postCard = ({ post }) => {
   return (
     <a
-      href={article.url}
+      href={post.url}
       target="_blank"
       rel="noopener noreferrer"
       className={styles.container}
     >
       <Image
-        src={article.cover_image}
-        alt={article.title}
+        src={post.feature_image}
+        alt={post.title}
+        className={styles.image}
         width={300}
-        height={150}
+        height={300}
+        objectFit="cover" // Add objectFit property
       />
       <div className={styles.content}>
-        <h3 className={styles.title}>{article.title}</h3>
-        <p>{article.description}</p>
-      </div>
-      <div className={styles.stats}>
-        <div className={styles.stat}>
-          <EyeIcon className={styles.icon} /> {article.page_views_count}
-        </div>
-        <div className={styles.stat}>
-          <HeartIcon className={styles.icon} /> {article.public_reactions_count}
-        </div>
-        <div className={styles.stat}>
-          <CommentIcon className={styles.icon} /> {article.comments_count}
-        </div>
+        <h3 className={styles.title}>{post.title}</h3>
+        <p>{post.excerpt}</p>
       </div>
     </a>
   );
 };
 
-export default ArticleCard;
+export default postCard;

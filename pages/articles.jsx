@@ -1,45 +1,44 @@
-import ArticleCard from '../components/ArticleCard';
+import React, { useEffect, useState } from 'react';
 import styles from '../styles/ArticlesPage.module.css';
+import ArticleCard from '../components/ArticleCard';
 
-const ArticlesPage = ({ articles }) => {
-  return (
-    <>
-      <h3>
-        Recent Posts from{' '}
-        <a
-          href="https://dev.to/itsnitinr"
-          target="_blank"
-          rel="noopener"
-          className={styles.underline}
-        >
-          dev.to
-        </a>
-      </h3>
-      <div className={styles.container}>
-        {articles.map((article) => (
-          <ArticleCard key={article.id} article={article} />
-        ))}
+
+const ArticlesPage = () => {
+  const [posts, setPosts] = useState([]);
+
+    useEffect(() => {
+      const getLatestPosts = async () => {
+        const response = await fetch(`https://${process.env.NEXT_PUBLIC_GHOST_API_URL}/ghost/api/content/posts/?key=${process.env.NEXT_PUBLIC_GHOST_CONTENT_API_KEY}&limit=5`);
+        const data = await response.json();
+        const posts = data.posts;
+        setPosts(posts);
+      };
+
+      getLatestPosts();
+
+    }, []);
+
+    return (
+      <div>
+        <h3>
+          Recent Posts from my blog
+        </h3>
+        <div className={styles.icontainer}>
+          {posts.map((post) => (
+            <ArticleCard post={post} />
+          ))}
+        </div>
       </div>
-    </>
-  );
-};
-
-export async function getStaticProps() {
-  const res = await fetch(
-    'https://dev.to/api/articles/me/published?per_page=6',
-    {
-      headers: {
-        'api-key': process.env.DEV_TO_API_KEY,
-      },
-    }
-  );
-
-  const data = await res.json();
-
-  return {
-    props: { title: 'Articles', articles: data },
-    revalidate: 60,
+      
+    );
+    
   };
-}
+
+  export async function getStaticProps() {
+    return {
+      props: { title: 'Articles'},
+      revalidate: 60,
+    };
+  }
 
 export default ArticlesPage;
