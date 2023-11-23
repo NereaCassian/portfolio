@@ -1,0 +1,13 @@
+# Ignora los directorios y archivos generados por npm y Next.js
+node_modules
+.next
+
+# Ignora archivos y directorios específicos que no son necesarios en el contenedor
+.DS_Store
+.env
+.env.development
+.env.test
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+.github
