@@ -1,7 +1,15 @@
 import Image from 'next/image';
 import styles from '../styles/Titlebar.module.css';
 
+const openUrlInNewTab = (url) => {
+  window.open(url, '_blank');
+};
+
 const Titlebar = () => {
+  const openUrlInNewTab = (url) => {
+    window.open(url, '_blank');
+  };
+
   return (
     <section className={styles.titlebar}>
       <Image
@@ -24,10 +32,12 @@ const Titlebar = () => {
       <div className={styles.windowButtons}>
         <span className={styles.minimize}></span>
         <span className={styles.maximize}></span>
-        <span className={styles.close}></span>
+        <span className={styles.close} onClick={() => openUrlInNewTab('https://example.com')}></span>
       </div>
     </section>
   );
+  
 };
+
 
 export default Titlebar;
