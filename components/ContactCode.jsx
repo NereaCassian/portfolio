@@ -2,11 +2,6 @@ import styles from '../styles/ContactCode.module.css';
 
 const contactItems = [
   {
-    social: 'Blog',
-    link: 'blog.nereacassian.com',
-    href: 'https://blog.nereacassian.com/',
-  },
-  {
     social: 'email',
     link: 'nerea@nereacassian.com',
     href: 'mailto:nerea@nereacassian.com',
