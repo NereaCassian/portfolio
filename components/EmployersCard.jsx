@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import styles from '../styles/ProjectCard.module.css';
+import styles from '../styles/EmployersCard.module.css';
 
-const ProjectCard = ({ project }) => {
+const EmployersCard = ({ project }) => {
   return (
     <div className={styles.card}>
       <Image src={project.image} height={600} width={600} alt={project.name} objectFit="cover" />
@@ -21,4 +21,4 @@ const ProjectCard = ({ project }) => {
   );
 };
 
-export default ProjectCard;
+export default EmployersCard;

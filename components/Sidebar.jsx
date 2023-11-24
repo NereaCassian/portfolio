@@ -15,21 +15,21 @@ const sidebarTopItems = [
     path: '/',
   },
   {
-    Icon: GithubIcon,
-    path: '/github',
-  },
-  {
     Icon: CodeIcon,
-    path: '/projects',
+    path: '/employers',
   },
   {
     Icon: PencilIcon,
     path: '/articles',
   },
   {
+    Icon: GithubIcon,
+    path: '/github',
+  },
+  {
     Icon: MailIcon,
     path: '/socials',
-  },
+  }
 ];
 
 const sidebarBottomItems = [

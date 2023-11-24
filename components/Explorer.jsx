@@ -16,13 +16,8 @@ const explorerItems = [
     icon: 'html_icon.svg',
   },
   {
-    name: 'socials.json',
-    path: '/socials',
-    icon: 'json_icon.svg',
-  },
-  {
-    name: 'projects.js',
-    path: '/projects',
+    name: 'employers.js',
+    path: '/employers',
     icon: 'js_icon.svg',
   },
   {
@@ -35,6 +30,11 @@ const explorerItems = [
     path: '/github',
     icon: 'markdown_icon.svg',
   },
+  {
+    name: 'socials.json',
+    path: '/socials',
+    icon: 'json_icon.svg',
+  }
 ];
 
 const Explorer = () => {
