@@ -21,11 +21,14 @@ export default function HomePage() {
               <button className={styles.outlined}>Contact Me</button>
             </Link>
           </div>
+          <br />
           <Image
             src="/pic.jpg"
             alt="Picture of the author"
             width={500}
             height={500}
+            objectFit='contain'
+            className={styles.image}
           />
         </div>
       </div>
