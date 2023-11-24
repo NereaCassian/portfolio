@@ -20,9 +20,10 @@ const ArticlesPage = () => {
 
     return (
       <div>
-        <h3>
+        <h1>
           Recent Posts from my blog
-        </h3>
+        </h1>
+        <br />
         <div className={styles.icontainer}>
           {posts.map((post) => (
             <ArticleCard post={post} />

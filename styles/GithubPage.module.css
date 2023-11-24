@@ -8,6 +8,10 @@
   margin-bottom: 1.5rem;
 }
 
+.user a {
+  text-decoration: none;
+}
+
 .user > div {
   display: flex;
   flex-wrap: wrap;
@@ -25,6 +29,7 @@
 
 .username {
   margin-left: 10px;
+  
 }
 
 .container {

@@ -15,16 +15,28 @@ const GithubPage = ({ repos, user }) => {
   return (
     <>
       <div className={styles.user}>
-        <div>
-          <Image
-            src={user.avatar_url}
-            className={styles.avatar}
-            alt={user.login}
-            width={50}
-            height={50}
-          />
-          <h3 className={styles.username}>{user.login}</h3>
-        </div>
+          <div>
+            <a 
+              href={`https://github.com/${process.env.NEXT_PUBLIC_GITHUB_USERNAME}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src={user.avatar_url}
+                className={styles.avatar}
+                alt={user.login}
+                width={50}
+                height={50}
+              />
+            </a>
+            <a 
+              href={`https://github.com/${process.env.NEXT_PUBLIC_GITHUB_USERNAME}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+            <h3 className={styles.username}>{user.login}</h3>
+            </a>
+          </div>
         <div>
           <h3>{user.public_repos} repos</h3>
         </div>

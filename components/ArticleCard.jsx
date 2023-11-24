@@ -13,6 +13,7 @@ const postCard = ({ post }) => {
         src={post.feature_image}
         alt={post.title}
         className={styles.image}
+        unoptimized
         width={300}
         height={300}
         objectFit="cover" // Add objectFit property

@@ -17,8 +17,8 @@ const CustomHead = ({ title }) => {
         property="og:description"
         content="A DevOPs Engineer's portfolio website."
       />
-      <meta property="og:image" content="" />
-      <meta property="og:url" content="" />
+      <meta property="og:image" content="https://cloud.nereacassian.com/index.php/apps/sharingpath/nereacassian/public/cdn/img/card.png" />
+      <meta property="og:url" content="https://nereacassian.com" />
       <meta name="twitter:card" content="summary_large_image" />
     </Head>
   );
