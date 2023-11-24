@@ -16,9 +16,9 @@ const explorerItems = [
     icon: 'html_icon.svg',
   },
   {
-    name: 'contact.css',
-    path: '/contact',
-    icon: 'css_icon.svg',
+    name: 'socials.json',
+    path: '/socials',
+    icon: 'json_icon.svg',
   },
   {
     name: 'projects.js',
@@ -26,9 +26,9 @@ const explorerItems = [
     icon: 'js_icon.svg',
   },
   {
-    name: 'articles.json',
+    name: 'articles.tf',
     path: '/articles',
-    icon: 'json_icon.svg',
+    icon: 'terraform_icon.svg',
   },
   {
     name: 'github.md',

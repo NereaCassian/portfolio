@@ -1,6 +1,11 @@
-import styles from '../styles/ContactCode.module.css';
+import styles from '../styles/SocialsCode.module.css';
 
-const contactItems = [
+const socialItems = [
+  {
+    social: 'My Blog',
+    link: 'blog.nereacassian.com',
+    href: 'https://blog.nereacassian.com/',
+  },
   {
     social: 'email',
     link: 'nerea@nereacassian.com',
@@ -28,33 +33,28 @@ const contactItems = [
   }
 ];
 
-const ContactCode = () => {
+const SocialCode = () => {
   return (
     <div className={styles.code}>
       <p className={styles.line}>
-        <span className={styles.className}>.socials</span> &#123;
+        <span>&#123;</span>
       </p>
-      {contactItems.slice(0, 8).map((item, index) => (
+      <p className={styles.line}>
+        <span className={styles.className}>&nbsp;&nbsp;&nbsp;"socials":</span> &#123;
+      </p>
+      {socialItems.slice(0, 8).map((item, index) => (
         <p className={styles.line} key={index}>
-          &nbsp;&nbsp;&nbsp;{item.social}:{' '}
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"{item.social}":{' '}
           <a href={item.href} target="_blank" rel="noopener">
-            {item.link}
+            "{item.link}"
           </a>
-          ;
+          {index !== socialItems.length - 1 ? ',' : ''}
         </p>
       ))}
-      {contactItems.slice(8, contactItems.length).map((item, index) => (
-        <p className={styles.line} key={index}>
-          &nbsp;&nbsp;{item.social}:{' '}
-          <a href={item.href} target="_blank" rel="noopener">
-            {item.link}
-          </a>
-          ;
-        </p>
-      ))}
+      <p className={styles.line}>&nbsp;&nbsp;&nbsp;&#125;</p>  
       <p className={styles.line}>&#125;</p>
     </div>
   );
 };
 
-export default ContactCode;
+export default SocialCode;

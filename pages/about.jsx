@@ -12,8 +12,7 @@ const AboutPage = () => {
             alt="Beyond Good & Evil"
             width={480}
             height={270}
-            objectFit='contain'
-            className={styles.image}/>
+            objectFit='contain'/>
           <p className={styles.paragraph}>
             When I was a little girl, I was fascinated by witnessing the technology of my daily life in action. I experienced the dawn of portable devices and touchscreen interfaces,
             watching with young eyes as the world of computing and communications grew by leaps and bounds. Back then, I used to tell everyone that I wanted to be a Telecommunications 
@@ -32,14 +31,13 @@ const AboutPage = () => {
           or Ansible, and how Docker containers allowed you to deploy an app and its entire infrastructure with a single command, I was fascinated. I began to specialize in the
           field, undertaking small projects until I eventually landed a position as a DevOps/SRE Engineer at Making Science. I love learning new things, and I frequently immerse
           myself in new development technologies. As it happens, this very portfolio has allowed me to learn how to use NEXTJS and yarn.
-          </p>
+          </p>  
           <Image
             src="/me.jpg"
             alt="Beyond Good & Evil"
             width={240}
             height={270}
-            objectFit='contain'
-            className={styles.image}/>
+            objectFit='contain'/>
         </div>
       </div>
     </div>

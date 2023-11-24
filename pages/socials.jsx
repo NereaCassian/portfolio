@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import ContactCode from '../components/ContactCode';
-import styles from '../styles/ContactPage.module.css';
+import SocialCode from '../components/SocialsCode';
+import styles from '../styles/SocialsPage.module.css';
 
-const ContactPage = () => {
+const SocialsPage = () => {
   return (
     <div className={styles.container}>
       <div>
         <h1 className={styles.heading}>Reach Out Via Socials</h1>
-        <ContactCode />
+        <SocialCode />
       </div>
     </div>
   );
@@ -15,8 +15,8 @@ const ContactPage = () => {
 
 export async function getStaticProps() {
   return {
-    props: { title: 'Contact' },
+    props: { title: 'Socials' },
   };
 }
 
-export default ContactPage;
+export default SocialsPage;

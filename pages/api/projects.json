@@ -1,11 +1,11 @@
 [
   {
-    "id": 1,
-    "name": "TEYS",
-    "image": "/teys.jpg",
-    "duration": "Feb 2022 - Apr 2022 (4 months)",
-    "description": "Developed the role of internal tools developer for the processing of data obtained from surveys.",
-    "tags": ["c", "MySQL", "mongodb", "Vue", "node"]
+    "id": 3,
+    "name": "Making Science",
+    "image": "/making.jpg",
+    "duration": " Jan 2023 - Present",
+    "description": "I developed the role of a DevOps/SRE Engineer, specializing in the development and maintenance of infrastructures for internal products and external clients. I utilize automation tools such as Terraform and work with cloud providers like Google Cloud and AWS.",
+    "tags": ["Terraform", "Ansible", "GCP", "Python"]
   },
   {
     "id": 2,
@@ -16,11 +16,11 @@
     "tags": ["KVM", "Quemu", "mongodb", "MySQL", "node", "Python"]
   },
   {
-    "id": 3,
-    "name": "Making Science",
-    "image": "/making.jpg",
-    "duration": " Jan 2023 - Present",
-    "description": "I developed the role of a DevOps/SRE Engineer, specializing in the development and maintenance of infrastructures for internal products and external clients. I utilize automation tools such as Terraform and work with cloud providers like Google Cloud and AWS.",
-    "tags": ["Terraform", "Ansible", "GCP", "Python"]
+    "id": 1,
+    "name": "TEYS",
+    "image": "/teys.jpg",
+    "duration": "Feb 2022 - Apr 2022 (4 months)",
+    "description": "Developed the role of internal tools developer for the processing of data obtained from surveys.",
+    "tags": ["c", "MySQL", "mongodb", "Vue", "node"]
   }
 ]

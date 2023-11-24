@@ -19,11 +19,18 @@
         display: grid;
         grid-template-columns: 1fr;
     }
+    .paragraph {
+        text-align: left;
+    }
 
+}
+.image {
+    margin: 20px;
 }
 
 .paragraph {
     text-align: justify;
+    margin: 15px;
 }
 
 
