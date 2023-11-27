@@ -1,15 +1,27 @@
 import Image from 'next/image';
 import styles from '../styles/Titlebar.module.css';
+import React from 'react';
 
 const openUrlInNewTab = (url) => {
   window.open(url, '_blank');
 };
 
-const Titlebar = () => {
-  const openUrlInNewTab = (url) => {
-    window.open(url, '_blank');
-  };
 
+const Titlebar = () => {
+  const aLittleSecret = () => {
+    const video = document.createElement('video');
+    video.src = '/secret.webm';
+    video.autoplay = true;
+    video.controls = false;
+    video.style.width = '100%';
+    video.style.height = '100%';
+    video.style.position = 'fixed';
+    video.style.top = '0';
+    video.style.left = '0';
+    video.style.zIndex = '9999';
+    document.body.appendChild(video);
+  };
+  
   return (
     <section className={styles.titlebar}>
       <Image
@@ -32,12 +44,10 @@ const Titlebar = () => {
       <div className={styles.windowButtons}>
         <span className={styles.minimize}></span>
         <span className={styles.maximize}></span>
-        <span className={styles.close} onClick={() => openUrlInNewTab('https://example.com')}></span>
+        <span className={styles.close} onClick={aLittleSecret}></span>
       </div>
     </section>
   );
-  
 };
-
 
 export default Titlebar;
