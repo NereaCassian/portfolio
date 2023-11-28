@@ -24,12 +24,17 @@ const socialItems = [
   {
     social: 'twitter',
     link: 'NereaCassian',
-    href: 'https://www.twitter.com/NereaCassian',
+    href: 'https://www.twitter.com/NereaCassian/',
   },
   {
     social: 'instagram',
     link: 'NereaCassian',
-    href: 'https://www.instagram.com/nereacassian',
+    href: 'https://www.instagram.com/nereacassian/',
+  },
+  {
+    social: 'Linkstack',
+    link: 'linkstack.nereacassian.com',
+    href: 'https://linkstack.nereacassian.com/',
   }
 ];
 
