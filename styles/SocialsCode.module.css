@@ -23,10 +23,31 @@
 .className {
   color: var(--accent-color);
 }
+.indent{
+  margin-left: 20px;
+}
 
-@media screen and (max-width: 750px) {
+.doubleIndent{
+  margin-left: 50px;
+}
+@media screen and (max-width: 800px) {
   .code {
     font-size: 0.65rem;
     line-height: 1.5rem;
+  }
+  .indent{
+    margin-left: 10px;
+  }
+  .doubleIndent{
+    margin-left: 30px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .indent{
+    margin-left: 5px;
+  }
+  .doubleIndent{
+    margin-left: 15px;
   }
 }

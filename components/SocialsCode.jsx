@@ -45,18 +45,18 @@ const SocialCode = () => {
         <span>&#123;</span>
       </p>
       <p className={styles.line}>
-        <span className={styles.className}>&nbsp;&nbsp;&nbsp;"socials":</span> &#123;
+        <span className={styles.indent}>"socials":</span> &#123;
       </p>
       {socialItems.slice(0, 8).map((item, index) => (
         <p className={styles.line} key={index}>
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"{item.social}":{' '}
+          <span className={styles.doubleIndent}>"{item.social}":{' '}</span>
           <a href={item.href} target="_blank" rel="noopener">
             "{item.link}"
           </a>
           {index !== socialItems.length - 1 ? ',' : ''}
         </p>
       ))}
-      <p className={styles.line}>&nbsp;&nbsp;&nbsp;&#125;</p>  
+      <p className={styles.line}><span className={styles.indent}>&#125;</span></p>  
       <p className={styles.line}>&#125;</p>
     </div>
   );
