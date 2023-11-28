@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import styles from '../styles/Titlebar.module.css';
 import React from 'react';
+import { useRouter } from 'next/router';
 
 const openUrlInNewTab = (url) => {
   window.open(url, '_blank');
@@ -21,6 +22,13 @@ const Titlebar = () => {
     video.style.zIndex = '9999';
     document.body.appendChild(video);
   };
+
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push('/test');
+  };
+
   
   return (
     <section className={styles.titlebar}>
@@ -42,7 +50,7 @@ const Titlebar = () => {
       </div>
       <p className={styles.title}>Nerea Kalandadze - Visual Studio Code</p>
       <div className={styles.windowButtons}>
-        <span className={styles.minimize}></span>
+        <span className={styles.minimize} onClick={handleClick}></span>
         <span className={styles.maximize}></span>
         <span className={styles.close} onClick={aLittleSecret}></span>
       </div>
