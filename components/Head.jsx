@@ -25,6 +25,7 @@ const CustomHead = ({ title }) => {
       <meta name="twitter:description" content="My portfolio website. Take a look 👀"/>
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:image" content="https://new.nereacassian.com/card.png"/>
+      <meta test></meta>
     </Head>
   );
 };
