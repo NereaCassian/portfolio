@@ -1,19 +1,44 @@
 import Link from 'next/link';
 import styles from '../styles/HomePage.module.css';
 import Image from 'next/image';
+import Typewriter from 'typewriter-effect';
 
 export default function HomePage() {
   return (
     <>
       <div className={styles.container}>
         <div className={styles.background}>
-          <h1>I BUILD</h1>
-          <h1>THE INTERNET</h1>
+          <Image
+            src="/circle.png"
+            alt="Picture of the author"
+            width={500}
+            height={500}
+            objectFit='contain'
+            style={
+              {
+                opacity: '0.3',
+              }
+            }
+          />
         </div>
         <div className={styles.foreground}>
           <div className={styles.content}>
             <h1 className={styles.name}>Nerea Kalandadze</h1>
-            <h6 className={styles.bio}>DevOps Engineer</h6>
+            <Typewriter 
+              onInit={(typewriter) => {
+                typewriter.typeString('DevOps Engineer')
+                .start();
+              }}
+              options={
+                {
+                  autoStart: true,
+                  loop: false,
+                  wrapperClassName: styles.bio,
+                  cursorClassName: styles.cursor,
+                }
+              }
+            /> 
+            <br />
             <Link href="/employers">
               <button className={styles.button}>View Work</button>
             </Link>
@@ -23,10 +48,10 @@ export default function HomePage() {
           </div>
           <br />
           <Image
-            src="/pic.jpg"
+            src="/pic.png"
             alt="Picture of the author"
-            width={500}
-            height={500}
+            width={512}
+            height={512}
             objectFit='contain'
             className={styles.image}
           />

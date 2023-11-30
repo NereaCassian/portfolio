@@ -16,7 +16,9 @@
   position: absolute;
   z-index: 1;
 }
-
+.backgroun_image {
+  opacity: 0.5;
+}
 .foreground {
   z-index: 2;
   display: flex;
@@ -37,43 +39,11 @@
   color: #eee;
   font-size: 1.5rem;
   font-weight: 300;
-  margin-bottom: 3rem;
+  margin-bottom: 5rem;
   position: relative;
 }
-
-.bio::before,
-.bio::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
-.bio::before {
-  background: var(--main-bg);
-  animation: typewriter 2.5s steps(24) 500ms forwards;
-}
-
-.bio::after {
-  margin-left: 0.4rem;
-  width: 0.125em;
-  background: var(--accent-color);
-  animation: typewriter 2.5s steps(24) 500ms forwards,
-    blink 750ms steps(24) infinite;
-}
-
-@keyframes typewriter {
-  to {
-    left: 100%;
-  }
-}
-
-@keyframes blink {
-  to {
-    background: transparent;
-  }
+.cursor{
+  font-size: 1.5rem;
 }
 
 .button {
@@ -121,6 +91,9 @@
     font-size: 3rem;
     margin-bottom: 5rem;
   }
+  .cursor{
+    font-size: 3rem;
+  }
   .button {
     font-size: 2rem;
   }
@@ -153,6 +126,9 @@
     font-size: 1.75rem;
     margin: 0.75rem auto 3rem;
   }
+  .cursor{
+    font-size: 1.75rem;
+  }
   .illustration {
     position: absolute;
     bottom: -50px;
@@ -172,6 +148,9 @@
     margin-bottom: 0.5rem;
   }
   .bio {
+    font-size: 1.5rem;
+  }
+  .cursor{
     font-size: 1.5rem;
   }
   .illustration {
@@ -201,6 +180,9 @@
   .bio {
     font-size: 1.25rem;
     margin-bottom: 2rem;
+  }
+  .cursor{
+    font-size: 1.25rem;
   }
   .button {
     font-size: 1rem;
