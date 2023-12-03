@@ -3,7 +3,7 @@ import Typewriter from 'typewriter-effect';
 import styles from '../styles/HomePage.module.css';
 
 const PurpleGuy = () => {
-  const defaultStrings = ['DevOps Engineer', 'Tech Enthusiast', 'Gamer', 'Developer'];
+  const defaultStrings = ['DevOps Engineer', 'Tech Enthusiast'];
   const song = `I don't know what I was thinking
   Leaving my child behind
   Now I suffer the curse and now I am blind
@@ -45,7 +45,6 @@ const PurpleGuy = () => {
 
   useEffect(() => {
     const randomNumber = Math.floor(Math.random() * 200) + 1;
-    console.log(randomNumber);
     if (randomNumber <= 19.87) {
       setStrings(songStrings);
     }
