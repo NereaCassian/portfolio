@@ -3,7 +3,7 @@ import Typewriter from 'typewriter-effect';
 import styles from '../styles/HomePage.module.css';
 
 const PurpleGuy = () => {
-  const defaultStrings = ['DevOps Engineer', 'Tech Enthusiast', 'Gamer'];
+  const defaultStrings = ['DevOps Engineer', 'Tech Enthusiast', 'Gamer', 'Developer'];
   const song = `I don't know what I was thinking
   Leaving my child behind
   Now I suffer the curse and now I am blind
