@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import styles from '../styles/HomePage.module.css';
 import Image from 'next/image';
-import Typewriter from 'typewriter-effect';
+import PurpleGuy from '../components/PurpleGuy';
 
 export default function HomePage() {
   return (
@@ -24,20 +24,7 @@ export default function HomePage() {
         <div className={styles.foreground}>
           <div className={styles.content}>
             <h1 className={styles.name}>Nerea Kalandadze</h1>
-            <Typewriter 
-              onInit={(typewriter) => {
-                typewriter.typeString('DevOps Engineer')
-                .start();
-              }}
-              options={
-                {
-                  autoStart: true,
-                  loop: false,
-                  wrapperClassName: styles.bio,
-                  cursorClassName: styles.cursor,
-                }
-              }
-            /> 
+            <PurpleGuy/> 
             <br />
             <Link href="/employers">
               <button className={styles.button}>View Work</button>
