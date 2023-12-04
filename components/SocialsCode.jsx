@@ -1,5 +1,6 @@
 import styles from '../styles/SocialsCode.module.css';
 
+
 const socialItems = [
   {
     social: 'My Blog',
@@ -35,7 +36,7 @@ const socialItems = [
     social: 'Linkstack',
     link: 'linkstack.nereacassian.com',
     href: 'https://linkstack.nereacassian.com/',
-  }
+  },
 ];
 
 const SocialCode = () => {
@@ -47,15 +48,22 @@ const SocialCode = () => {
       <p className={styles.line}>
         <span className={styles.indent}>"socials":</span> &#123;
       </p>
-      {socialItems.slice(0, 8).map((item, index) => (
+      {socialItems.slice(0, 7).map((item, index) => (
         <p className={styles.line} key={index}>
           <span className={styles.doubleIndent}>"{item.social}":{' '}</span>
           <a href={item.href} target="_blank" rel="noopener">
             "{item.link}"
           </a>
-          {index !== socialItems.length - 1 ? ',' : ''}
         </p>
       ))}
+      {socialItems.slice(7, socialItems.length).map((item, index) => (
+        <p className={styles.line} key={index}>
+          <span className={styles.doubleIndentNine}>"{item.social}":{' '}</span>
+          <a href={item.href} target="_blank" rel="noopener">
+            "{item.link}"
+          </a>
+        </p>
+      ))}       
       <p className={styles.line}><span className={styles.indent}>&#125;</span></p>  
       <p className={styles.line}>&#125;</p>
     </div>
