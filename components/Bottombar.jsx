@@ -28,12 +28,26 @@ const Bottombar = () => {
       </div>
       <div className={styles.container}>
         <div className={styles.section}>
-          <NextjsIcon className={styles.icon} />
-          <p>Powered by Next.js</p>
+          <a
+            href="https://nextjs.org/"
+            target="_blank"
+            rel="noreferrer noopener"
+            className={styles.section}
+          >
+            <NextjsIcon className={styles.icon} />
+            <p>Powered by Next.js</p>
+          </a>
         </div>
         <div className={styles.section}>
-          <CheckIcon className={styles.icon} />
-          <p>Prettier</p>
+          <a 
+          href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode"
+          target="_blank"
+          rel="noreferrer noopener"
+          className={styles.section}
+          >
+            <CheckIcon className={styles.icon} />
+            <p>Prettier</p>
+          </a>
         </div>
         <div className={styles.section}>
           <BellIcon />
