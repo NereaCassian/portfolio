@@ -17,14 +17,14 @@ const CustomHead = ({ title }) => {
         property="og:description"
         content="This is my website. Take a look 👀"
       />
-      <meta property="og:image" content="https://new.nereacassian.com/card.png" />
-      <meta property="og:url" content="https://new.nereacassian.com/" />
-      <meta property="twitter:domain" content="new.nereacassian.com"/>
-      <meta property="twitter:url" content="https://new.nereacassian.com/"/>
+      <meta property="og:image" content="https://nereacassian.com/card.png" />
+      <meta property="og:url" content="https://nereacassian.com/" />
+      <meta property="twitter:domain" content="nereacassian.com"/>
+      <meta property="twitter:url" content="https://nereacassian.com/"/>
       <meta name="twitter:title" content="Nerea Kalandadze's portfolio"/>
       <meta name="twitter:description" content="This is my website. Take a look 👀"/>
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:image" content="https://new.nereacassian.com/card.png"/>
+      <meta name="twitter:image" content="https://nereacassian.com/card.png"/>
     </Head>
   );
 };

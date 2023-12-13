@@ -26,6 +26,6 @@ jobs:
         title: ${{ github.repository }}
         description: "Deployed to server"
         url: "https://github.com/NereaCassian/portfolio/actions"
-        avatar_url: "https://new.nereacassian.com/pic.png"
+        avatar_url: "https://nereacassian.com/pic.png"
         username: "Portfolio Actions"            
       
