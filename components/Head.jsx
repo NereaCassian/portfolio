@@ -4,6 +4,7 @@ const CustomHead = ({ title }) => {
   return (
     <Head>
       <title>{title}</title>
+      <link rel="icon" href="/favicon.ico" />
       <meta
         name="description"
         content="Nerea Kalanadadze's website."
