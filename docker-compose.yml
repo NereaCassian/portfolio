@@ -4,5 +4,6 @@ services:
     container_name: web
     image: web
     build: .
+    restart: always
     ports:
       - "2222:3000"
