@@ -9,6 +9,15 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+    - name: Set up SSH
+      uses: webfactory/ssh-agent@v0.5.3
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+    - name: Connect to server and deploy
+      run: |
+        ssh -o StrictHostKeyChecking=no root@nereacassian.com 'cd /root/portfolio && git pull && docker compose up -d --build'
+              
     - name: Actions Status Discord
       uses: sarisia/actions-status-discord@v1.13.0
       with:
@@ -18,14 +27,5 @@ jobs:
         description: "Deployed to server"
         url: "https://github.com/NereaCassian/portfolio/actions"
         avatar_url: "https://new.nereacassian.com/pic.png"
-        username: "Portfolio Actions"         
-         
-    - name: Set up SSH
-      uses: webfactory/ssh-agent@v0.5.3
-      with:
-        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
-    - name: Connect to server and deploy
-      run: |
-        ssh -o StrictHostKeyChecking=no root@nereacassian.com 'cd /root/portfolio && git pull && docker compose up -d --build'        
+        username: "Portfolio Actions"            
       
