@@ -8,11 +8,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
     - name: Set up SSH
       uses: webfactory/ssh-agent@v0.5.3
       with:
@@ -21,3 +17,15 @@ jobs:
     - name: Connect to server and deploy
       run: |
         ssh -o StrictHostKeyChecking=no root@nereacassian.com 'cd /root/portfolio && git pull && docker compose up -d --build'
+              
+    - name: Actions Status Discord
+      uses: sarisia/actions-status-discord@v1.13.0
+      with:
+        webhook: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        status: ${{ job.status }}
+        title: ${{ github.repository }}
+        description: "Deployed to server"
+        url: "https://github.com/NereaCassian/portfolio/actions"
+        avatar_url: "https://new.nereacassian.com/pic.png"
+        username: "Portfolio Actions"            
+      
