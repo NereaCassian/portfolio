@@ -19,6 +19,7 @@ jobs:
         ssh -o StrictHostKeyChecking=no root@nereacassian.com 'cd /root/portfolio && git pull && docker compose up -d --build'
               
     - name: Actions Status Discord
+      if: always()
       uses: sarisia/actions-status-discord@v1.13.0
       with:
         webhook: ${{ secrets.DISCORD_WEBHOOK_URL }}
