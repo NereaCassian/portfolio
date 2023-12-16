@@ -26,6 +26,14 @@ const CustomHead = ({ title }) => {
       <meta name="twitter:description" content="This is my website. Take a look 👀"/>
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:image" content="https://nereacassian.com/card.png"/>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5GC74K35R"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-F5GC74K35R');
+      </script>
     </Head>
   );
 };
