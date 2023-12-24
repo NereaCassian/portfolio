@@ -25,7 +25,7 @@ const CustomHead = ({ title }) => {
       <meta name="twitter:title" content="Nerea Kalandadze's portfolio"/>
       <meta name="twitter:description" content="This is my website. Take a look 👀"/>
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:image" content="https://nereacassian.com/card.png"/>
+      <meta name="twitter:image" content="https://nereacassian.com/card.png?x=12325"/>
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-F5GC74K35R"></script>
     </Head>
   );
