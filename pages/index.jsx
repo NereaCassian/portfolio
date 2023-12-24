@@ -9,10 +9,10 @@ export default function HomePage() {
       <div className={styles.container}>
         <div className={styles.background}>
           <Image
-            src="/circle.png"
+            src="/logo.png"
             alt="Picture of the author"
-            width={500}
-            height={500}
+            width={512}
+            height={443}
             objectFit='contain'
             style={
               {

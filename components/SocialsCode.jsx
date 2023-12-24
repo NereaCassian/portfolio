@@ -4,8 +4,8 @@ import styles from '../styles/SocialsCode.module.css';
 const socialItems = [
   {
     social: 'My Blog',
-    link: 'blog.nereacassian.com',
-    href: 'https://blog.nereacassian.com/',
+    link: 'blog.yellowumbrella.dev',
+    href: 'https://blog.yellowumbrella.dev/',
   },
   {
     social: 'email',
