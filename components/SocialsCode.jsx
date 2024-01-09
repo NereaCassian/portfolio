@@ -35,7 +35,7 @@ const socialItems = [
   {
     social: 'Linkstack',
     link: 'linkstack.nereacassian.com',
-    href: 'https://linkstack.nereacassian.com/',
+    href: 'https://linkstack.nereacassian.com/@nereacassian',
   },
 ];
 
