@@ -16,7 +16,7 @@ const postCard = ({ post }) => {
         unoptimized
         width={300}
         height={300}
-        objectFit="cover" // Add objectFit property
+        objectFit="cover"
       />
       <div className={styles.content}>
         <h3 className={styles.title}>{post.title}</h3>
