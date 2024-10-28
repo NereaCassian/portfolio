@@ -8,7 +8,7 @@ const ArticlesPage = () => {
 
     useEffect(() => {
       const getLatestPosts = async () => {
-        const response = await fetch(`https://${process.env.NEXT_PUBLIC_GHOST_API_URL}/ghost/api/content/posts/?key=${process.env.NEXT_PUBLIC_GHOST_CONTENT_API_KEY}&limit=5`);
+        const response = await fetch(`https://${context.env.NEXT_PUBLIC_GHOST_API_URL}/ghost/api/content/posts/?key=${context.env.NEXT_PUBLIC_GHOST_CONTENT_API_KEY}&limit=5`);
         const data = await response.json();
         const posts = data.posts;
         setPosts(posts);

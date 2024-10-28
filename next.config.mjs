@@ -12,7 +12,7 @@ const nextConfig = {
     ],
   },
 };
-  if (process.env.NODE_ENV === 'development') {
+  if (context.env.NODE_ENV === 'development') {
     await setupDevPlatform();
   }
 

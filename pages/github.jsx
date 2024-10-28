@@ -17,7 +17,7 @@ const GithubPage = ({ repos, user }) => {
       <div className={styles.user}>
           <div>
             <a 
-              href={`https://github.com/${process.env.NEXT_PUBLIC_GITHUB_USERNAME}`}
+              href={`https://github.com/${context.env.NEXT_PUBLIC_GITHUB_USERNAME}`}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -30,7 +30,7 @@ const GithubPage = ({ repos, user }) => {
               />
             </a>
             <a 
-              href={`https://github.com/${process.env.NEXT_PUBLIC_GITHUB_USERNAME}`}
+              href={`https://github.com/${context.env.NEXT_PUBLIC_GITHUB_USERNAME}`}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -51,7 +51,7 @@ const GithubPage = ({ repos, user }) => {
       </div>
       <div className={styles.contributions}>
         <GitHubCalendar
-          username={process.env.NEXT_PUBLIC_GITHUB_USERNAME}
+          username={context.env.NEXT_PUBLIC_GITHUB_USERNAME}
           theme={theme}
           hideColorLegend
           hideMonthLabels
@@ -63,20 +63,20 @@ const GithubPage = ({ repos, user }) => {
 
 export async function getStaticProps() {
   const userRes = await fetch(
-    `https://api.github.com/users/${process.env.NEXT_PUBLIC_GITHUB_USERNAME}`,
+    `https://api.github.com/users/${context.env.NEXT_PUBLIC_GITHUB_USERNAME}`,
     {
       headers: {
-        Authorization: `token ${process.env.GITHUB_API_KEY}`,
+        Authorization: `token ${context.env.GITHUB_API_KEY}`,
       },
     }
   );
   const user = await userRes.json();
 
   const repoRes = await fetch(
-    `https://api.github.com/users/${process.env.NEXT_PUBLIC_GITHUB_USERNAME}/repos?per_page=100`,
+    `https://api.github.com/users/${context.env.NEXT_PUBLIC_GITHUB_USERNAME}/repos?per_page=100`,
     {
       headers: {
-        Authorization: `token ${process.env.GITHUB_API_KEY}`,
+        Authorization: `token ${context.env.GITHUB_API_KEY}`,
       },
     }
   );
