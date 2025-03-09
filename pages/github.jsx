@@ -17,7 +17,7 @@ const GithubPage = ({ repos, user }) => {
       <div className={styles.user}>
           <div>
             <a 
-              href={`https://github.com/${context.env.NEXT_PUBLIC_GITHUB_USERNAME}`}
+              href={`https://github.com/${process.env.NEXT_PUBLIC_GITHUB_USERNAME}`}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -30,7 +30,7 @@ const GithubPage = ({ repos, user }) => {
               />
             </a>
             <a 
-              href={`https://github.com/${context.env.NEXT_PUBLIC_GITHUB_USERNAME}`}
+              href={`https://github.com/${process.env.NEXT_PUBLIC_GITHUB_USERNAME}`}
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -51,7 +51,7 @@ const GithubPage = ({ repos, user }) => {
       </div>
       <div className={styles.contributions}>
         <GitHubCalendar
-          username={context.env.NEXT_PUBLIC_GITHUB_USERNAME}
+          username={process.env.NEXT_PUBLIC_GITHUB_USERNAME}
           theme={theme}
           hideColorLegend
           hideMonthLabels
@@ -62,33 +62,55 @@ const GithubPage = ({ repos, user }) => {
 };
 
 export async function getStaticProps() {
-  const userRes = await fetch(
-    `https://api.github.com/users/${context.env.NEXT_PUBLIC_GITHUB_USERNAME}`,
-    {
-      headers: {
-        Authorization: `token ${context.env.GITHUB_API_KEY}`,
-      },
-    }
-  );
-  const user = await userRes.json();
+  try {
+    const userRes = await fetch(
+      `https://api.github.com/users/${process.env.NEXT_PUBLIC_GITHUB_USERNAME}`,
+      {
+        headers: {
+          Authorization: `token ${process.env.GITHUB_API_KEY}`,
+        },
+      }
+    );
+    const user = await userRes.json();
 
-  const repoRes = await fetch(
-    `https://api.github.com/users/${context.env.NEXT_PUBLIC_GITHUB_USERNAME}/repos?per_page=100`,
-    {
-      headers: {
-        Authorization: `token ${context.env.GITHUB_API_KEY}`,
-      },
+    const repoRes = await fetch(
+      `https://api.github.com/users/${process.env.NEXT_PUBLIC_GITHUB_USERNAME}/repos?per_page=100`,
+      {
+        headers: {
+          Authorization: `token ${process.env.GITHUB_API_KEY}`,
+        },
+      }
+    );
+    let repos = await repoRes.json();
+    
+    if (!Array.isArray(repos)) {
+      console.error('GitHub API returned:', repos);
+      repos = [];
+    } else {
+      repos = repos
+        .sort((a, b) => b.stargazers_count - a.stargazers_count)
+        .slice(0, 6);
     }
-  );
-  let repos = await repoRes.json();
-  repos = repos
-    .sort((a, b) => b.stargazers_count - a.stargazers_count)
-    .slice(0, 6);
 
-  return {
-    props: { title: 'GitHub', repos, user },
-    revalidate: 10,
-  };
+    return {
+      props: { 
+        title: 'GitHub', 
+        repos, 
+        user 
+      },
+      revalidate: 3600, // Revalidate once per hour instead of every 10 seconds
+    };
+  } catch (error) {
+    console.error('Error fetching GitHub data:', error);
+    return {
+      props: { 
+        title: 'GitHub', 
+        repos: [], 
+        user: { login: process.env.NEXT_PUBLIC_GITHUB_USERNAME, public_repos: 0, followers: 0, avatar_url: '' } 
+      },
+      revalidate: 60, // Try again more frequently if there was an error
+    };
+  }
 }
 
 export default GithubPage;
