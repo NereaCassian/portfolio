@@ -1,9 +1,0 @@
-name = "portfolio"
-compatibility_date = "2024-07-29"
-compatibility_flags = ["nodejs_compat"]
-pages_build_output_dir = ".vercel/output/static"
-[env]
-PUBLIC_GHOST_API_URL=blog.nereacassian.com
-PUBLIC_GHOST_CONTENT_API_KEY=6aae38c68eec6d81f9c324a055
-NEXT_PUBLIC_API_URL = https://nereacassian.com/api
-NEXT_PUBLIC_GITHUB_USERNAME = NereaCassian
