@@ -8,7 +8,9 @@ const nextConfig = {
       'avatars.githubusercontent.com',
       'imgur.com',
       'blog.nereacassian.com',
-      'localhost'
+      'localhost',
+      'portfolio-9sr.pages.dev'
+      
     ],
   },
 };
