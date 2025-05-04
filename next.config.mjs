@@ -1,5 +1,3 @@
-import { setupDevPlatform } from '@cloudflare/next-on-pages/next-dev';
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
@@ -7,15 +5,10 @@ const nextConfig = {
       'res.cloudinary.com',
       'avatars.githubusercontent.com',
       'imgur.com',
-      'blog.nereacassian.com',
-      'localhost',
-      'portfolio-9sr.pages.dev'
-      
+      'blog.nereacassian.com',    
     ],
   },
 };
-  if (process.env.NODE_ENV === 'development') {
-    await setupDevPlatform();
-  }
-
 export default nextConfig;
+import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
+initOpenNextCloudflareForDev();
